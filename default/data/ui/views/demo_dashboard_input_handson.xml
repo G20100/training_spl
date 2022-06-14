@@ -1,0 +1,67 @@
+<form>
+  <label>演習問題  - 入力フィールド</label>
+  <fieldset submitButton="false" autoRun="false">
+    <input type="time" token="PERIOD">
+      <label>分析期間</label>
+      <default>
+        <earliest>-7d@d</earliest>
+        <latest>-1d@d</latest>
+      </default>
+    </input>
+    <input type="dropdown" token="COUNTRY" searchWhenChanged="false">
+      <label>国名(英語)</label>
+      <fieldForLabel>Country</fieldForLabel>
+      <fieldForValue>Country</fieldForValue>
+      <search>
+        <query>index=main sourcetype=access_combined_wcookie 
+| iplocation clientip
+| stats count by Country</query>
+        <earliest>-7d@h</earliest>
+        <latest>now</latest>
+      </search>
+    </input>
+    <input type="dropdown" token="ACTION">
+      <label>アクション</label>
+      <fieldForLabel>action</fieldForLabel>
+      <fieldForValue>action</fieldForValue>
+      <search>
+        <query>index=main sourcetype=access_combined_wcookie 
+| stats count by action</query>
+        <earliest>-7d@h</earliest>
+        <latest>now</latest>
+      </search>
+    </input>
+  </fieldset>
+  <row>
+    <panel>
+      <html>
+問題<br/>
+現在このダッシュボードではショッピングカートで発生したエラー発生した件数を、URIパス毎に集計しています。<br/>
+1. ショッピングカートのアクションとクライアントIPの国名をドロップダウンで定義していますが、これらアクション、国名がともにドロップダウンの中から複数選択ができるように改修してください。<br/>
+2. 複数選択を実現後、ドロップダウンから選択の都度でサーチが自動的に実行されないよう工夫してください。<br/>
+3. ドロップダウンから条件指定することでパネルが表示されるようになっていますが、サーチ条件が渡される前段階から仮パネルが表示されるように工夫してください。<br/>
+      </html>
+    </panel>
+  </row>
+  <row>
+    <panel depends="$COUNTRY$,$ACTION$">
+      <title>アクション$ACTION$ 時のエラー発生件数  - URIパス別</title>
+      <chart>
+        <search>
+          <query>index=main sourcetype=access_combined_wcookie action=$ACTION$ status IN (4*, 5*)
+| iplocation clientip
+| search Country = $COUNTRY$ 
+| chart count by uri_path</query>
+          <earliest>$PERIOD.earliest$</earliest>
+          <latest>$PERIOD.latest$</latest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="charting.axisTitleX.visibility">collapsed</option>
+        <option name="charting.axisTitleY.visibility">collapsed</option>
+        <option name="charting.chart">column</option>
+        <option name="charting.drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </chart>
+    </panel>
+  </row>
+</form>

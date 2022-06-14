@@ -1,0 +1,14 @@
+<dashboard>
+<label>ダッシュボードベストプラクティス(まとめ)</label>
+  <row>
+    <panel>
+      <html>
+      <strong>• デフォルトサーチ期間は短く設定</strong><br/>
+      <strong>• 1 つのダッシュボードにたくさんのパネルを貼らない</strong><br/>
+      <strong>• パネル数が多くなる場合はポストプロセスサーチまたはスケジュールサーチのいずれかの方法で対応する</strong><br/>
+      <strong>• 入力フィールド、依存、イベントハンドラーを有効活用してストレスの少ないインターフェースを心掛ける</strong><br/>
+      
+  	</html>
+    </panel>
+  </row>
+</dashboard>

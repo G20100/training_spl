@@ -1,0 +1,39 @@
+<dashboard>
+  <label>事前定義済みパネル</label>
+  <row>
+    <panel>
+      <html>
+事前定義済みパネルを使えばチーム内で同じパネルを共有することができます。<br/>
+事前定義済みパネルは [設定] &gt; [ユーザーインターフェース] &gt; [事前定義済みパネル] で管理されています。<br/>
+利用に当たっては [パネルの追加] &gt; [事前定義済みパネルの追加] で行います。<br/>
+      </html>
+    </panel>
+  </row>
+  <row>
+    <panel ref="demo_prebuilt_sample" app="power_of_spl_tmp"></panel>
+  </row>
+  <row>
+    <panel>
+      <title>ソースコード</title>
+      <html>
+<![CDATA[
+<dashboard>
+  <label>事前定義済みパネル</label>
+  <row>
+    <panel>
+      <html>
+事前定義済みパネルを使えばチーム内で同じパネルを共有することができます。<br/>
+事前定義済みパネルは [設定] &gt; [ユーザーインターフェース] &gt; [事前定義済みパネル] で管理されています。<br/>
+利用に当たっては [パネルの追加] &gt; [事前定義済みパネルの追加] で行います。<br/>
+      </html>
+    </panel>
+  </row>
+  <row>
+    <panel ref="demo_prebuilt_sample" app="power_of_spl_tmp"></panel>
+  </row>
+</dashboard>
+]]>
+      </html>
+    </panel>
+  </row>
+</dashboard>

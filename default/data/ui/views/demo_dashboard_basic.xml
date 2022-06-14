@@ -1,0 +1,81 @@
+<form>
+  <label>ダッシュボードの基本です</label>
+  <fieldset submitButton="false">
+    <input type="time" token="PERIOD">
+      <label>分析期間</label>
+      <default>
+        <earliest>-7d@h</earliest>
+        <latest>now</latest>
+      </default>
+    </input>
+  </fieldset>
+  <row>
+    <panel>
+      <html>
+ダッシュボードでは、入力フィールドに条件を入力し、複数のパネルを使って可視化を行うことができます。また、可視化されたデータから様々なドリルダウンを設定することでよりインタラクティブなインタフェースを実装できます。<br/>
+このダッシュボードでは分析期間に設定したタイムピッカーでサーチを制御しています。分析期間に設定されている PERIOD トークンをサーチの時間範囲で指定することで、タイムピッカーとサーチが連動します。
+      </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>製品カテゴリ毎のエラーコード発生数</title>
+      <table>
+        <search>
+          <query>index=main sourcetype=access_combined_wcookie status=5*
+| chart count by categoryId status
+| rename categoryId as "カテゴリ名"</query>
+          <earliest>$PERIOD.earliest$</earliest>
+          <latest>$PERIOD.latest$</latest>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="totalsRow">false</option>
+      </table>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>ソースコード</title>
+      <html>
+<![CDATA[
+<form>
+  <label>ダッシュボードの基本</label>
+  <fieldset submitButton="false">
+    <input type="time" token="PERIOD">
+      <label>分析期間</label>
+      <default>
+        <earliest>-7d@h</earliest>
+        <latest>now</latest>
+      </default>
+    </input>
+  </fieldset>
+  <row>
+    <panel>
+      <html>
+ダッシュボードでは、入力フィールドに条件を入力し、複数のパネルを使って可視化を行うことができます。また、可視化されたデータから様々なドリルダウンを設定することでよりインタラクティブなインタフェースを実装できます。<br/>
+このダッシュボードでは分析期間に設定したタイムピッカーでサーチを制御しています。分析期間に設定されている PERIOD トークンをサーチの時間範囲で指定することで、タイムピッカーとサーチが連動します。
+      </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>製品カテゴリ毎のエラーコード発生数</title>
+      <table>
+        <search>
+          <query>index=main sourcetype=access_combined_wcookie status=5*
+| chart count by categoryId status
+| rename categoryId as "カテゴリ名"</query>
+          <earliest>$PERIOD.earliest$</earliest>
+          <latest>$PERIOD.latest$</latest>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="totalsRow">false</option>
+      </table>
+    </panel>
+  </row>
+</form>
+]]>
+      </html>
+    </panel>
+  </row>
+</form>

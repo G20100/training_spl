@@ -1,0 +1,111 @@
+<form>
+  <label>パフォーマンス: メタデータ</label>
+  <fieldset submitButton="false">
+    <input type="time" token="PERIOD">
+      <label>分析期間</label>
+      <default>
+        <earliest>-7d@d</earliest>
+        <latest>-d@d</latest>
+      </default>
+    </input>
+  </fieldset>
+  <row>
+    <panel>
+      <html>
+メタ情報だけを対象としたサーチであれば tstats コマンドを使用することでサーチを高速化することができます。<br/>
+      </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>secure.log の取り込み件数</title>
+      <chart>
+        <search>
+          <query>index=main sourcetype="secure-2"
+| timechart count</query>
+          <earliest>$PERIOD.earliest$</earliest>
+          <latest>$PERIOD.latest$</latest>
+        </search>
+        <option name="charting.axisLabelsY.majorUnit">500</option>
+        <option name="charting.chart">bar</option>
+        <option name="charting.drilldown">none</option>
+        <option name="charting.layout.splitSeries">0</option>
+        <option name="refresh.display">progressbar</option>
+      </chart>
+    </panel>
+    <panel>
+      <title>secure.log の取り込み件数(tstats 使用)</title>
+      <chart>
+        <search>
+          <query>| tstats count where index=main sourcetype="secure-2" by _time</query>
+          <earliest>$PERIOD.earliest$</earliest>
+          <latest>$PERIOD.latest$</latest>
+        </search>
+        <option name="charting.axisLabelsY.majorUnit">500</option>
+        <option name="charting.chart">bar</option>
+        <option name="charting.drilldown">none</option>
+        <option name="charting.layout.splitSeries">0</option>
+        <option name="refresh.display">progressbar</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <html>
+<![CDATA[
+  <label>パフォーマンス: メタデータ</label>
+  <fieldset submitButton="false">
+    <input type="time" token="PERIOD">
+      <label>分析期間</label>
+      <default>
+        <earliest>-7d@d</earliest>
+        <latest>-d@d</latest>
+      </default>
+    </input>
+  </fieldset>
+  <row>
+    <panel>
+      <html>
+メタ情報だけを対象としたサーチであれば tstats コマンドを使用することでサーチを高速化することができます。<br/>
+      </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>secure.log の取り込み件数</title>
+      <chart>
+        <search>
+          <query>index=main sourcetype="secure-2"
+| timechart count</query>
+          <earliest>$PERIOD.earliest$</earliest>
+          <latest>$PERIOD.latest$</latest>
+        </search>
+        <option name="charting.axisLabelsY.majorUnit">500</option>
+        <option name="charting.chart">bar</option>
+        <option name="charting.drilldown">none</option>
+        <option name="charting.layout.splitSeries">0</option>
+        <option name="refresh.display">progressbar</option>
+      </chart>
+    </panel>
+    <panel>
+      <title>secure.log の取り込み件数(tstats 使用)</title>
+      <chart>
+        <search>
+          <query>| tstats count where index=main sourcetype="secure-2" by _time</query>
+          <earliest>$PERIOD.earliest$</earliest>
+          <latest>$PERIOD.latest$</latest>
+        </search>
+        <option name="charting.axisLabelsY.majorUnit">500</option>
+        <option name="charting.chart">bar</option>
+        <option name="charting.drilldown">none</option>
+        <option name="charting.layout.splitSeries">0</option>
+        <option name="refresh.display">progressbar</option>
+      </chart>
+    </panel>
+  </row>
+  </row>
+]]>
+      </html>
+    </panel>
+  </row>
+</form>

@@ -1,0 +1,35 @@
+<nav search_view="search" color="#ff1493">
+  <collection label="demoハンズオン">
+    <view name="demo_table_of_contents" default='true' />
+    <collection label="2022年2月15日開催分 - ダッシュボード"> 
+      <view name="demo_dashboard_basic"/>
+      <view name="demo_dashboard_input_text"/>
+      <view name="demo_dashboard_input_radio_button"/>
+      <view name="demo_dashboard_input_link"/>
+      <view name="demo_dashboard_input_drop_down"/>
+      <view name="demo_dashboard_input_multi_select"/>
+      <view name="demo_dashboard_input_submit"/>
+      <view name="demo_dashboard_input_submit_autorun"/>
+      <view name="demo_dashboard_input_dependency"/>
+      <view name="demo_dashboard_input_dependency_rejects"/>
+     <view name="demo_dashboard_input_handson"/>
+      <view name="demo_dashboard_drilldown_search"/>
+      <view name="demo_dashboard_drilldown_search_custom"/>
+      <view name="demo_dashboard_drilldown_token"/>
+      <view name="demo_dashboard_drilldown_dashboard"/>
+      <view name="demo_dashboard_drilldown_handson"/>
+      <view name="demo_dashboard_eventhandler_input"/>
+      <view name="demo_dashboard_eventhandler_search"/>
+      <view name="demo_dashboard_eventhandler_timeline"/>
+      <view name="demo_dashboard_performance_sampling"/>
+      <view name="demo_dashboard_performance_report"/>
+      <view name="demo_dashboard_postprocess_search"/>
+      <view name="demo_dashboard_prebuilt_panel"/>
+      <view name="demo_dashboard_summary"/>
+    </collection>
+
+  </collection>
+  <view name="search" />  
+  <view name="reports" />  
+  <view name="dashboards" />
+</nav>

@@ -1,0 +1,25 @@
+<dashboard>
+  <label>本アプリについて</label>
+  <row>
+    <panel>
+      <html>
+      <h2><strong>• 概要</strong></h2>
+      <strong>このアプリは Splunk ダッシュボードの主要機能のサンプル集です。自分がやりたいことから逆引きできるようになっています。<br/>
+      すべてのサンプルにソースコードがついていますので、ご自身でダッシュボードに追加して、動作確認を行いながら実現したいダッシュボードを作成してください。<br/>
+      ハッピー Splunking!!
+      </strong>
+        <br/>
+      <h2><strong>• 使い方</strong></h2>
+      <strong>サンプルデータとして　Splunk で公開している Tutorialデータを使用しています。以下から最新の tutorialdata.zip を入手のうえ、本インスタンスにアップロードください。(本セッションではすでにアップロード済みのため不要です)</strong><br/>
+      <a href="https://docs.splunk.com/Documentation/SplunkCloud/latest/SearchTutorial/Systemrequirements#Download_the_tutorial_data_files" target="_blank">Download the tutorial data files</a>
+      
+        <br/>
+      <h2><strong>• ドキュメント</strong></h2>
+      <strong>本アプリで使用しているダッシュボードの機能の詳細は以下のリファレンスを参照してください。</strong> <br/>
+      <a href="https://docs.splunk.com/Documentation/Splunk/latest/Viz/Aboutthismanual" target="_blank">Dashboards and Visualizations</a>
+      <br/>
+        <br/>
+  	</html>
+    </panel>
+  </row>
+</dashboard>
